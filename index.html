@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video WP</title>
+    <style>
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <video src="des.mp4" id="video" width="300px" height="300px" preload="auto" loop autoplay controls muted></video>
+    <button class="btn hidden">Click Me</button>
+
+    <script>
+        const video = document.querySelector('#video');
+        const btn = document.querySelector('.btn');
+        const loadTime = function () {
+            currentTime = this.currentTime;
+            console.log(Math.floor(currentTime));
+            if (currentTime > 10) {
+                btn.classList.remove('hidden');
+            }
+        }
+        video.addEventListener('timeupdate' , loadTime);
+            
+    </script>
+</body>
+</html>
